@@ -110,7 +110,7 @@ func (b *Bar) Add(n ...int) {
 
 	b.count()
 
-	if lastRate != b.rate || lastSpeed != b.speed {
+	if (lastRate != b.rate || lastSpeed != b.speed) && !b.closed {
 		b.advance <- true
 	}
 
