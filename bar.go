@@ -180,7 +180,7 @@ func (b *Bar) barMsg() string {
 
 	prefix := fmt.Sprintf("%s", b.prefix)
 	rate := fmt.Sprintf("%3d%%", b.rate)
-	speed := fmt.Sprintf("%3.2f %s ps", 0.01*float64(b.speed)/float64(change), unit)
+	speed := fmt.Sprintf("%3.2f %s runtime", 0.01*float64(b.speed)/float64(change), unit)
 	cost := b.timeFmt(b.cost)
 	estimate := b.timeFmt(b.estimate)
 	ct := fmt.Sprintf(" (%d/%d)", b.current, b.total)
