@@ -194,7 +194,7 @@ func (b *Bar) barMsg() string {
 		realBar2 = ">" + bar2[:bar2Len-1]
 	}
 
-	msg := fmt.Sprintf(`%s %s%s [%s%s] %s %s in: %s`, prefix, rate, ct, realBar1, realBar2, speed, cost, estimate)
+	msg := fmt.Sprintf(`%s %s%s [%s%s] %s %s`, prefix, rate, ct, realBar1, realBar2, speed, cost)
 	switch {
 	case b.speed <= b.slow*100:
 		return "\033[0;31m" + msg + "\033[0m"
