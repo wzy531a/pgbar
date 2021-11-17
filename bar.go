@@ -94,6 +94,14 @@ func (b *Bar) SetSpeedSection(fast, slow int) {
 	}
 }
 
+func (b *Bar) Close() {
+	if !b.closed {
+		b.closed = true
+		close(b.done)
+		close(b.advance)
+	}
+}
+
 func (b *Bar) Add(n ...int) {
 	b.mu.Lock()
 	defer b.mu.Unlock()
